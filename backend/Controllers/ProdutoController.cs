@@ -20,7 +20,7 @@ namespace backend.Controllers {
         /// </summary>
         /// <returns>Lista de Produtos</returns>
         [HttpGet]
-        [Authorize(Roles = "3")]
+      //  [Authorize(Roles = "3")]
         public async Task<ActionResult<List<Produto>>> Get () {
 
             var produtos = await _repositorio.Listar();

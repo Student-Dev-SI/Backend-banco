@@ -12,11 +12,21 @@ INSERT INTO Endereco (Rua_AV, Numero, Complemento,  CEP, Bairro,  Estado  ) VALU
 
 INSERT INTO Cat_Produto(Tipo) VALUES ('Conserva')
 
-INSERT INTO Cat_Produto(Tipo) VALUES ('Bebidas')
+INSERT INTO Cat_Produto(Tipo) VALUES ('Bebida')
 
-INSERT INTO Produto(Id_Cat_Produto, Nome) VALUES (1, 'Feijão')
+INSERT INTO Cat_Produto(Tipo) VALUES ('Graos')
 
-INSERT INTO Receita(Nome) VALUES ('Limão')
+INSERT INTO Cat_Produto(Tipo) VALUES ('Frios')
+
+INSERT INTO Cat_Produto(Tipo) VALUES ('Fruta')
+
+INSERT INTO Cat_Produto(Tipo) VALUES ('Verdura')
+
+INSERT INTO Cat_Produto(Tipo) VALUES ('Legumes')
+
+INSERT INTO Produto (NomeProduto, Quantidade, Preco, Descricao_do_Produto, Validade, Id_Cat_Produto) VALUES ('FeijÃ£o', 20, 10,00, "FeijÃ£o de 1kg", 22/12/22, 1 )
+
+INSERT INTO Receita(Nome) VALUES ('Limï¿½o')
 
 INSERT INTO Receita(Nome) VALUES ('Casca De Laranja')
 
