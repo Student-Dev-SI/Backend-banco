@@ -24,9 +24,9 @@ INSERT INTO Cat_Produto(Tipo) VALUES ('Verdura')
 
 INSERT INTO Cat_Produto(Tipo) VALUES ('Legumes')
 
-INSERT INTO Produto (NomeProduto, Quantidade, Preco, Descricao_do_Produto, Validade, Id_Cat_Produto) VALUES ('Feijão', 20, 10,00, "Feijão de 1kg", 22/12/22, 1 )
+INSERT INTO Produto (NomeProduto, Quantidade, Preco, Descricao_do_Produto, Validade, Id_Cat_Produto) VALUES ('Feijão', 20, 10.00, 'Feijão de 1kg', 22/12/22, 1 )
 
-INSERT INTO Receita(Nome) VALUES ('Lim�o')
+INSERT INTO Receita(Nome) VALUES ('Limão')
 
 INSERT INTO Receita(Nome) VALUES ('Casca De Laranja')
 
