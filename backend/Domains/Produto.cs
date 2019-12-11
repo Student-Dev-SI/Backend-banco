@@ -17,13 +17,9 @@ namespace backend.Domains
         [Key]
         [Column("Id_Produto")]
         public int IdProduto { get; set; }
-        [Required]
+        [Column("Nome_Produto")]
         [StringLength(255)]
         public string NomeProduto { get; set; }
-        [Required]
-        [Column("Descricao_do_Produto")]
-        [StringLength(255)]
-        public string DescricaoDoProduto { get; set; }
         [Column("Id_Cat_Produto")]
         public int? IdCatProduto { get; set; }
 

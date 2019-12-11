@@ -38,10 +38,10 @@ namespace backend.Domains
             modelBuilder.Entity<CatProduto>(entity =>
             {
                 entity.HasKey(e => e.IdCatProduto)
-                    .HasName("PK__Cat_Prod__27A1E38D0A17A705");
+                    .HasName("PK__Cat_Prod__27A1E38D05A07D87");
 
                 entity.HasIndex(e => e.Tipo)
-                    .HasName("UQ__Cat_Prod__8E762CB4725BD1FE")
+                    .HasName("UQ__Cat_Prod__8E762CB44F729408")
                     .IsUnique();
 
                 entity.Property(e => e.Tipo).IsUnicode(false);
@@ -50,7 +50,7 @@ namespace backend.Domains
             modelBuilder.Entity<Endereco>(entity =>
             {
                 entity.HasKey(e => e.IdEndereco)
-                    .HasName("PK__Endereco__4B564035151DBD63");
+                    .HasName("PK__Endereco__4B564035FEFFD96F");
 
                 entity.Property(e => e.Bairro).IsUnicode(false);
 
@@ -62,36 +62,40 @@ namespace backend.Domains
                     .IsUnicode(false)
                     .IsFixedLength();
 
-                entity.Property(e => e.RuaAv).IsUnicode(false);
+                entity.Property(e => e.NomeEndereco).IsUnicode(false);
             });
 
             modelBuilder.Entity<Oferta>(entity =>
             {
                 entity.HasKey(e => e.IdOferta)
-                    .HasName("PK__Oferta__6C9F2EA0F7B689F7");
+                    .HasName("PK__Oferta__6C9F2EA094472389");
+
+                entity.Property(e => e.DescricaoDoProduto).IsUnicode(false);
+
+                entity.Property(e => e.NomeProduto).IsUnicode(false);
 
                 entity.Property(e => e.Quantidade).IsUnicode(false);
 
                 entity.HasOne(d => d.IdCatProdutoNavigation)
                     .WithMany(p => p.Oferta)
                     .HasForeignKey(d => d.IdCatProduto)
-                    .HasConstraintName("FK__Oferta__Id_Cat_P__628FA481");
+                    .HasConstraintName("FK__Oferta__Id_Cat_P__71D1E811");
 
                 entity.HasOne(d => d.IdProdutoNavigation)
                     .WithMany(p => p.Oferta)
                     .HasForeignKey(d => d.IdProduto)
-                    .HasConstraintName("FK__Oferta__Id_Produ__60A75C0F");
+                    .HasConstraintName("FK__Oferta__Id_Produ__6FE99F9F");
 
                 entity.HasOne(d => d.IdUsuarioNavigation)
                     .WithMany(p => p.Oferta)
                     .HasForeignKey(d => d.IdUsuario)
-                    .HasConstraintName("FK__Oferta__Id_Usuar__619B8048");
+                    .HasConstraintName("FK__Oferta__Id_Usuar__70DDC3D8");
             });
 
             modelBuilder.Entity<Pedido>(entity =>
             {
                 entity.HasKey(e => e.IdPedido)
-                    .HasName("PK__Pedido__A5D0013928899682");
+                    .HasName("PK__Pedido__A5D001393588CC1F");
 
                 entity.HasOne(d => d.IdProdutoNavigation)
                     .WithMany(p => p.Pedido)
@@ -107,9 +111,7 @@ namespace backend.Domains
             modelBuilder.Entity<Produto>(entity =>
             {
                 entity.HasKey(e => e.IdProduto)
-                    .HasName("PK__Produto__94E704D8704CD853");
-
-                entity.Property(e => e.DescricaoDoProduto).IsUnicode(false);
+                    .HasName("PK__Produto__94E704D8222FBAA6");
 
                 entity.Property(e => e.NomeProduto).IsUnicode(false);
 
@@ -122,7 +124,7 @@ namespace backend.Domains
             modelBuilder.Entity<ProdutoReceita>(entity =>
             {
                 entity.HasKey(e => e.IdProdutoReceita)
-                    .HasName("PK__Produto___ADAB9BA8671ADA04");
+                    .HasName("PK__Produto___ADAB9BA8CCF774B1");
 
                 entity.HasOne(d => d.IdProdutoNavigation)
                     .WithMany(p => p.ProdutoReceita)
@@ -138,15 +140,15 @@ namespace backend.Domains
             modelBuilder.Entity<Receita>(entity =>
             {
                 entity.HasKey(e => e.IdReceita)
-                    .HasName("PK__Receita__22C9673004A6CA1A");
+                    .HasName("PK__Receita__22C96730209F1E20");
 
-                entity.Property(e => e.Nome).IsUnicode(false);
+                entity.Property(e => e.NomeReceita).IsUnicode(false);
             });
 
             modelBuilder.Entity<TipoUsuario>(entity =>
             {
                 entity.HasKey(e => e.IdTipoUsuario)
-                    .HasName("PK__Tipo_Usu__689D5FEA6B89E008");
+                    .HasName("PK__Tipo_Usu__689D5FEAABEC0B05");
 
                 entity.Property(e => e.Tipo).IsUnicode(false);
             });
@@ -154,7 +156,7 @@ namespace backend.Domains
             modelBuilder.Entity<Usuario>(entity =>
             {
                 entity.HasKey(e => e.IdUsuario)
-                    .HasName("PK__Usuario__63C76BE23A09F69F");
+                    .HasName("PK__Usuario__63C76BE24E2F1F02");
 
                 entity.Property(e => e.CelularTelefone).IsUnicode(false);
 

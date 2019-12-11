@@ -11,6 +11,14 @@ namespace backend.Domains
         [Column("Id_Oferta")]
         public int IdOferta { get; set; }
         [Required]
+        [Column("Nome_Produto")]
+        [StringLength(255)]
+        public string NomeProduto { get; set; }
+        [Required]
+        [Column("Descricao_do_Produto")]
+        [StringLength(255)]
+        public string DescricaoDoProduto { get; set; }
+        [Required]
         [StringLength(255)]
         public string Quantidade { get; set; }
         [Column(TypeName = "money")]

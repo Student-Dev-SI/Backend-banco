@@ -16,9 +16,8 @@ namespace backend.Domains
         [Column("Id_Endereco")]
         public int IdEndereco { get; set; }
         [Required]
-        [Column("Rua_Av")]
         [StringLength(255)]
-        public string RuaAv { get; set; }
+        public string NomeEndereco { get; set; }
         public int Numero { get; set; }
         [Required]
         [StringLength(1)]

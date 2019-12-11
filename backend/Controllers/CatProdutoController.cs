@@ -37,7 +37,7 @@ namespace backend.Controllers {
         /// <param name="id"></param>
         /// <returns>Unico Id de categoria produtos</returns>
         [HttpGet ("{id}")]
-        [Authorize (Roles = "3")]
+        //[Authorize (Roles = "3")]
         public async Task<ActionResult<CatProduto>> Get (int id) {
             var catproduto = await _repositorio.BuscarPorID (id);
 
@@ -53,7 +53,7 @@ namespace backend.Controllers {
         /// <param name="catproduto"></param>
         /// <returns>Envia uma categoria produto</returns>
         [HttpPost]
-        [Authorize (Roles = "3")]
+        //[Authorize (Roles = "3")]
         public async Task<ActionResult<CatProduto>> Post (CatProduto catproduto) {
             try {
                 await _repositorio.Salvar (catproduto);
@@ -98,7 +98,7 @@ namespace backend.Controllers {
         /// <param name="id"></param>
         /// <returns>Deleta uma categoria</returns>
         [HttpDelete ("{id}")]
-        [Authorize (Roles = "3")]
+        //[Authorize (Roles = "3")]
         public async Task<ActionResult<CatProduto>> Delete (int id) {
 
             var catproduto = await _repositorio.BuscarPorID (id);

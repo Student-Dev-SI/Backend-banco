@@ -12,12 +12,12 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json;
-
 //dotnet ef dbcontext scaffold "Server=LAPTOP-P3KQSPPA; Database=fastrade;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -o Domains -d
 
 
@@ -25,6 +25,8 @@ namespace backend
 {
     public class Startup
     {
+        readonly string PermissaoEntreOrigens = "_PermissaoEntreOrigens";
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -61,6 +63,11 @@ namespace backend
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))  
                 };  
             });
+
+              services.AddCors (options => {
+                options.AddPolicy (PermissaoEntreOrigens,
+                    builder => builder.AllowAnyOrigin ().AllowAnyMethod ().AllowAnyHeader ());
+            });
         }
         
 
@@ -72,6 +79,12 @@ namespace backend
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseStaticFiles (new StaticFileOptions {
+                FileProvider = new PhysicalFileProvider (
+                        Path.Combine (Directory.GetCurrentDirectory (), "ResourceImage")),
+                    RequestPath = "/ResourceImage"
+            });
+
             // Usamos efetivamente o SWAGGER
             app.UseSwagger ();
             // Especificamos o Endpoint na aplicação
@@ -81,7 +94,10 @@ namespace backend
 
             app.UseAuthentication();
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
+
+            app.UseCors (builder => builder.AllowAnyOrigin ().AllowAnyMethod ().AllowAnyHeader ());
+
 
             app.UseRouting();
 

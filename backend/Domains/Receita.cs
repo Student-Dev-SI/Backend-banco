@@ -15,8 +15,9 @@ namespace backend.Domains
         [Key]
         [Column("Id_Receita")]
         public int IdReceita { get; set; }
+        [Column("Nome_Receita")]
         [StringLength(255)]
-        public string Nome { get; set; }
+        public string NomeReceita { get; set; }
 
         [InverseProperty("IdReceitaNavigation")]
         public virtual ICollection<ProdutoReceita> ProdutoReceita { get; set; }

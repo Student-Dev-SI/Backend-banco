@@ -41,7 +41,7 @@ namespace backend.Controllers {
         /// <param name="id"></param>
         /// <returns>Mostramos unico ID de oferta</returns>
         [HttpGet ("{id}")]
-        [Authorize (Roles = "3")]
+        //[Authorize (Roles = "3")]
         public async Task<ActionResult<Oferta>> Get (int id) {
             var oferta = await _repositorio.BuscarPorID (id);
 
@@ -71,7 +71,7 @@ namespace backend.Controllers {
                 oferta.Quantidade = (Request.Form["Quantidade"]);
                 oferta.Preco = decimal.Parse  (Request.Form["Preco"]);
                 oferta.Validade = DateTime.Parse (Request.Form["Validade"]);
-                oferta.FotoUrlOferta = _Upload.Upload (arquivo, "Ofertas");             
+                oferta.FotoUrlOferta = _Upload.Upload (arquivo, "Ofertas");                 
 
                await _repositorio.Salvar (oferta);
                 } else {
@@ -91,8 +91,8 @@ namespace backend.Controllers {
         /// <param name="oferta"></param>
         /// <returns>Alteração de dados de uma oferta</returns>
         [HttpPut ("{id}")]
-        [Authorize (Roles = "3")]
-        [Authorize (Roles = "2")]
+        //[Authorize (Roles = "3")]
+        //[Authorize (Roles = "2")]
         public async Task<ActionResult> Put (int id, Oferta oferta) {
             if (id != oferta.IdOferta) {
 
