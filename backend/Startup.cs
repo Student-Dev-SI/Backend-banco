@@ -18,7 +18,11 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json;
 
+<<<<<<< HEAD
 //dotnet ef dbcontext scaffold "Server=LAPTOP-P3KQSPPA; Database=fastrade;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -o Domains -d
+=======
+//dotnet ef dbcontext scaffold "Server=LAPTOP-P3KQSPPA; Database=fastrade" Microsoft.EntityFrameworkCore.SqlServer -o Domains -d
+>>>>>>> 6900c30e5a12c9378e77dc2455ca5a2a6777b608
 
 namespace backend
 {
