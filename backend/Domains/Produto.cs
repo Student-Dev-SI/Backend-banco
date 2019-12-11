@@ -21,16 +21,9 @@ namespace backend.Domains
         [StringLength(255)]
         public string NomeProduto { get; set; }
         [Required]
-        [StringLength(255)]
-        public string Quantidade { get; set; }
-        [Column(TypeName = "money")]
-        public decimal Preco { get; set; }
-        [Required]
         [Column("Descricao_do_Produto")]
         [StringLength(255)]
         public string DescricaoDoProduto { get; set; }
-        [Column(TypeName = "datetime")]
-        public DateTime Validade { get; set; }
         [Column("Id_Cat_Produto")]
         public int? IdCatProduto { get; set; }
 

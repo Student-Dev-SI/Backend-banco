@@ -12,7 +12,7 @@ Tipo VARCHAR(255)
 
 CREATE TABLE Endereco(
 Id_Endereco INT IDENTITY PRIMARY KEY NOT NULL,
-Rua_AV VARCHAR(255) NOT NULL,
+Rua_Av VARCHAR(255) NOT NULL,
 Numero INT NOT NULL,
 Complemento VARCHAR NOT NULL,
 CEP VARCHAR(9) NOT NULL,
@@ -28,11 +28,9 @@ Tipo VARCHAR(255) UNIQUE,
 CREATE TABLE Produto(
 Id_Produto INT IDENTITY PRIMARY KEY NOT NULL,
 NomeProduto VARCHAR (255) NOT NULL,
-Quantidade VARCHAR (255) NOT NULL,
-Preco MONEY NOT NULL,
 Descricao_do_Produto VARCHAR (255) NOT NULL,
-Validade DATETIME NOT NULL,
 Id_Cat_Produto INT FOREIGN KEY REFERENCES Cat_Produto(Id_Cat_Produto)
+
 );
 
 
@@ -72,12 +70,13 @@ Quantidade INT NOT NULL
 
 CREATE TABLE Oferta(
 Id_Oferta INT IDENTITY PRIMARY KEY NOT NULL,
+Quantidade VARCHAR (255) NOT NULL,
+Preco MONEY NOT NULL,
+Validade DATETIME NOT NULL,
+Foto_Url_Oferta TEXT NOT NULL,
 Id_Produto     INT FOREIGN KEY REFERENCES Produto(Id_Produto),
 Id_Usuario     INT FOREIGN KEY REFERENCES Usuario(Id_Usuario),
-Quantidade INT NOT NULL,
-Preco VARCHAR(255) NOT NULL,
-Foto_Url_Oferta TEXT NOT NULL,
-Validade DATE
+Id_Cat_Produto INT FOREIGN KEY REFERENCES Cat_Produto(Id_Cat_Produto)
 );
 
 

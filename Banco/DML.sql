@@ -24,9 +24,9 @@ INSERT INTO Cat_Produto(Tipo) VALUES ('Verdura')
 
 INSERT INTO Cat_Produto(Tipo) VALUES ('Legumes')
 
-INSERT INTO Produto (NomeProduto, Quantidade, Preco, Descricao_do_Produto, Validade, Id_Cat_Produto) VALUES ('Feijão', 20, 10,00, "Feijão de 1kg", 22/12/22, 1 )
+INSERT INTO Produto (NomeProduto, Descricao_do_Produto, Id_Cat_Produto) VALUES ('Feijão', 'Feijão de 1kg - Camilo', 1 )
 
-INSERT INTO Receita(Nome) VALUES ('Lim�o')
+INSERT INTO Receita(Nome) VALUES ('Limão')
 
 INSERT INTO Receita(Nome) VALUES ('Casca De Laranja')
 
@@ -40,4 +40,4 @@ INSERT INTO Usuario(Id_Endereco, Id_Tipo_Usuario, Nome_Razao_Social, Email, Senh
 
 INSERT INTO Pedido(Id_Produto, Id_Usuario, Quantidade) VALUES (1, 1, 20)
 
-INSERT INTO Oferta(Id_Produto, Id_Usuario, Quantidade, Preco, Foto_Url_Oferta, Validade) VALUES (1, 1, 50, '4,99', 'Url_Imagens_Texto', '22/11/2022')
+INSERT INTO Oferta(Quantidade, Preco, Validade, Id_Produto, Id_Usuario,  Foto_Url_Oferta ) VALUES (5, 10.00, 22/11/2022, 1, 2, 'Url_Imagens_Texto')

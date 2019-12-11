@@ -10,20 +10,26 @@ namespace backend.Domains
         [Key]
         [Column("Id_Oferta")]
         public int IdOferta { get; set; }
+        [Required]
+        [StringLength(255)]
+        public string Quantidade { get; set; }
+        [Column(TypeName = "money")]
+        public decimal Preco { get; set; }
+        [Column(TypeName = "datetime")]
+        public DateTime Validade { get; set; }
+        [Required]
+        [Column("Foto_Url_Oferta", TypeName = "text")]
+        public string FotoUrlOferta { get; set; }
         [Column("Id_Produto")]
         public int? IdProduto { get; set; }
         [Column("Id_Usuario")]
         public int? IdUsuario { get; set; }
-        public int Quantidade { get; set; }
-        [Required]
-        [StringLength(255)]
-        public string Preco { get; set; }
-        [Required]
-        [Column("Foto_Url_Oferta", TypeName = "text")]
-        public string FotoUrlOferta { get; set; }
-        [Column(TypeName = "date")]
-        public DateTime? Validade { get; set; }
+        [Column("Id_Cat_Produto")]
+        public int? IdCatProduto { get; set; }
 
+        [ForeignKey(nameof(IdCatProduto))]
+        [InverseProperty(nameof(CatProduto.Oferta))]
+        public virtual CatProduto IdCatProdutoNavigation { get; set; }
         [ForeignKey(nameof(IdProduto))]
         [InverseProperty(nameof(Produto.Oferta))]
         public virtual Produto IdProdutoNavigation { get; set; }
