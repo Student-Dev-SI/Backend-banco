@@ -24,9 +24,9 @@ INSERT INTO Cat_Produto(Tipo) VALUES ('Verdura')
 
 INSERT INTO Cat_Produto(Tipo) VALUES ('Legumes')
 
-INSERT INTO Produto (NomeProduto, Descricao_do_Produto, Id_Cat_Produto) VALUES ('Feijão', 'Feijão de 1kg - Camilo', 1 )
+INSERT INTO Produto (Id_Cat_Produto) VALUES (1)
 
-INSERT INTO Produto (NomeProduto, Descricao_do_Produto, Id_Cat_Produto) VALUES ('Arroz', 'Arroz de 1kg', 1)
+INSERT INTO Produto (Id_Cat_Produto) VALUES (1)
 
 INSERT INTO Receita(Nome) VALUES ('Limão')
 
@@ -44,8 +44,8 @@ INSERT INTO Pedido(Id_Produto, Id_Usuario, Quantidade) VALUES (1, 1, 20)
 
 INSERT INTO Pedido(Id_Produto, Id_Usuario, Quantidade) VALUES (1, 1, 30)
 
-INSERT INTO Oferta(Id_Produto, Id_Usuario, Quantidade, Preco, Descricao_do_Produto, Validade, Foto_Url_Oferta) VALUES (1, 2, '200', 3, 'Feijão de 1kg', '22/11/2001', 'Img_oferta')
+INSERT INTO Oferta(Id_Produto, Id_Usuario, Quantidade, NomeProduto, Preco, Descricao_do_Produto, Validade, Foto_Url_Oferta) VALUES (1, 2, 'Feijão', '200', 3, 'Feijão de 1kg', '22/11/2001', 'Img_oferta')
 
-INSERT INTO Oferta(Id_Produto, Id_Usuario, Quantidade, Preco, Descricao_do_Produto, Validade, Foto_Url_Oferta) VALUES (1, 2, '350', 5.00, 'Arroz de 1kg', '23/12/2020', 'Img_oferta1')
+INSERT INTO Oferta(Id_Produto, Id_Usuario, Quantidade, NomeProduto, Preco, Descricao_do_Produto, Validade, Foto_Url_Oferta) VALUES (1, 2, 'Arroz', '350', 5.00, 'Arroz de 1kg', '23/12/2020', 'Img_oferta1')
 
-INSERT INTO Oferta(Id_Produto, Id_Usuario, Quantidade, Preco, Descricao_do_Produto, Validade, Foto_Url_Oferta) VALUES (1, 2, '400', 7.00, 'Arroz de 1kg', '23/12/2020', 'Img_oferta1')
+INSERT INTO Oferta(Id_Produto, Id_Usuario, Quantidade, NomeProduto, Preco, Descricao_do_Produto, Validade, Foto_Url_Oferta) VALUES (1, 2, 'Arroz Branco','400', 7.00, 'Arroz Branco de 1kg', '23/12/2020', 'Img_oferta1')
