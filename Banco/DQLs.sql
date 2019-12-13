@@ -4,8 +4,6 @@ USE	fastrade
 
 SELECT * FROM Tipo_Usuario
 
-SELECT * FROM Endereco
-
 SELECT * FROM Cat_Produto
 
 SELECT * FROM Produto

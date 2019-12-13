@@ -64,14 +64,12 @@ namespace backend.Controllers {
         // [Authorize (Roles = "3")]
         public async Task<ActionResult<Usuario>> Post ([FromForm] Usuario usuario) {
             try {
-                usuario.IdEndereco = Convert.ToInt32 (Request.Form["IdEndereco"]);
                 usuario.IdTipoUsuario = Convert.ToInt32 (Request.Form["IdTipoUsuario"]);
                 usuario.NomeRazaoSocial = Request.Form["NomeRazaoSocial"];
                 usuario.CpfCnpj = Request.Form["CpfCnpj"];
 
 
                     // Remoção de caracteres especifico
-                //  usuario.CpfCnpj =  usuario.CpfCnpj.Replace ("", "");
                  usuario.CpfCnpj =  usuario.CpfCnpj.Replace ("/", "");
                  usuario.CpfCnpj =  usuario.CpfCnpj.Replace ("-", "");
                  usuario.CpfCnpj =  usuario.CpfCnpj.Replace (".", "");
@@ -79,6 +77,12 @@ namespace backend.Controllers {
                 usuario.Email = Request.Form["Email"];
                 usuario.Senha = Request.Form["Senha"];
                 usuario.CelularTelefone = Request.Form["CelularTelefone"];
+                usuario.RuaAv = Request.Form["RuaAv"];
+                usuario.Numero = Convert.ToInt32(Request.Form["Numero"]);
+                usuario.Complemento = Request.Form["Complemento"];
+                usuario.Cep = Request.Form["Cep"];
+                usuario.Bairro = Request.Form["Bairro"];
+                usuario.Estado = Request.Form["Estado"];
 
                 await _Repositorio.Salvar (usuario);
 
@@ -133,7 +137,6 @@ namespace backend.Controllers {
             try {
                 var arquivo = Request.Form.Files[0];
                 usuario.IdUsuario = Convert.ToInt32 (Request.Form["IdUsuario"]);
-                usuario.IdEndereco = Convert.ToInt32 (Request.Form["IdEndereco"]);
                 usuario.IdTipoUsuario = Convert.ToInt32 (Request.Form["IdTipoUsuario"]);
                 usuario.NomeRazaoSocial = Request.Form["NomeRazaoSocial"];
                 usuario.CpfCnpj = Request.Form["CpfCnpj"];

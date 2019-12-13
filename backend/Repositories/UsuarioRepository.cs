@@ -17,7 +17,7 @@ namespace backend.Repositories {
 
         public async Task<Usuario> BuscarPorID (int id) {
             using (fastradeContext _contexto = new fastradeContext ()) {
-                return await _contexto.Usuario.Include ("IdEnderecoNavigation").Include ("IdTipoUsuarioNavigation").FirstOrDefaultAsync (e => e.IdUsuario == id);
+                return await _contexto.Usuario.Include ("IdTipoUsuarioNavigation").FirstOrDefaultAsync (e => e.IdUsuario == id);
             }
         }
 
@@ -31,7 +31,7 @@ namespace backend.Repositories {
 
         public async Task<List<Usuario>> Listar () {
             using (fastradeContext _contexto = new fastradeContext ()) {
-                return await _contexto.Usuario.Include ("IdEnderecoNavigation").Include ("IdTipoUsuarioNavigation").ToListAsync ();
+                return await _contexto.Usuario.Include ("IdTipoUsuarioNavigation").ToListAsync ();
             }
         }
 

@@ -50,7 +50,6 @@ namespace backend.Controllers {
                 new Claim (ClaimTypes.Role, userInfo.IdTipoUsuario.ToString ()),
                 new Claim ("Role", userInfo.IdTipoUsuario.ToString ()),
                 new Claim ("IdUsuario", userInfo.IdUsuario.ToString()),
-                new Claim ("IdEndereco", userInfo.IdEndereco.ToString())
             };
 
             // Configuramos nosso Token e seu tempo de vida

@@ -8,8 +8,6 @@ INSERT INTO Tipo_Usuario (Tipo) VALUES ('Fornecedor')
 
 INSERT INTO Tipo_Usuario (Tipo) VALUES ('Adm')
 
-INSERT INTO Endereco (Rua_Av, Numero, Complemento,  CEP, Bairro, Estado  ) VALUES ('Rua Grafite', 223, 'cs6', '123456789', 'Jardim Romão', 'SP')
-
 INSERT INTO Cat_Produto(Tipo) VALUES ('Conserva')
 
 INSERT INTO Cat_Produto(Tipo) VALUES ('Bebida')
@@ -34,11 +32,11 @@ INSERT INTO Receita(Nome) VALUES ('Casca De Laranja')
 
 INSERT INTO Produto_Receita(Id_Produto, Id_Receita) VALUES (1, 2)
 
-INSERT INTO Usuario(Id_Endereco, Id_Tipo_Usuario, Nome_Razao_Social, CPF_CNPJ, Email, Senha, Celular_Telefone, Foto_Url_Usuario) VALUES (1, 1, 'Consumidor Do Chiquinho',  '123456789', 'Fornecedor@gmail.com', '******', '(11)9777-6666', 'Imagem bank')
+INSERT INTO Usuario(Id_Tipo_Usuario, Nome_Razao_Social, CPF_CNPJ, Email, Senha, Celular_Telefone, Foto_Url_Usuario, Rua_Av, Numero, Complemento, CEP, Bairro, Estado ) VALUES (1, 'Consumidor Do Chiquinho',  '123456789', 'Consumidor@gmail.com', '******', '(11)9777-6666', 'Imagem bank', 'Rua Madalena', 223, 'cs6','123456789', 'Bairro Outono', 'SP')
 
-INSERT INTO Usuario(Id_Endereco, Id_Tipo_Usuario, Nome_Razao_Social, CPF_CNPJ, Email, Senha, Celular_Telefone, Foto_Url_Usuario) VALUES (1, 2, 'Fornecedor Do Chiquinho',  '123456789', 'consumidor@gmail.com', '******', '(11)9777-6666', 'Imagem bank')
+INSERT INTO Usuario(Id_Tipo_Usuario, Nome_Razao_Social, CPF_CNPJ, Email, Senha, Celular_Telefone, Foto_Url_Usuario, Rua_Av, Numero, Complemento, CEP, Bairro, Estado ) VALUES (2, 'Fornecedor Do Chiquinho',  '123456789', 'Fornecedor@gmail.com', '******', '(11)9777-6666', 'Imagem bank', 'Rua Madalena', 223, 'cs6','123456789', 'Bairro Outono', 'SP')
 
-INSERT INTO Usuario(Id_Endereco, Id_Tipo_Usuario, Nome_Razao_Social, CPF_CNPJ, Email, Senha, Celular_Telefone, Foto_Url_Usuario) VALUES (1, 3, 'Adm', '123456789', 'adc@gmail.com', '******', '(11)9777-6666', 'Imagem bank')
+INSERT INTO Usuario(Id_Tipo_Usuario, Nome_Razao_Social, CPF_CNPJ, Email, Senha, Celular_Telefone, Foto_Url_Usuario, Rua_Av, Numero, Complemento, CEP, Bairro, Estado ) VALUES (2, 'Adm Do Chiquinho',  '123456789', 'Adm@gmail.com', '******', '(11)9777-6666', 'Imagem bank', 'Rua Madalena', 223, 'cs6','123456789', 'Bairro Outono', 'SP')
 
 INSERT INTO Pedido(Id_Produto, Id_Usuario, Quantidade) VALUES (1, 1, 20)
 
