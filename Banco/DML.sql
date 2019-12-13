@@ -6,7 +6,7 @@ INSERT INTO Tipo_Usuario (Tipo) VALUES ('Consumidor')
 
 INSERT INTO Tipo_Usuario (Tipo) VALUES ('Fornecedor')
 
-INSERT INTO Tipo_Usuario (Tipo) VALUES ('Adm')
+INSERT INTO Tipo_Usuario (Tipo) VALUES ('Administrador')
 
 INSERT INTO Cat_Produto(Tipo) VALUES ('Conserva')
 
@@ -26,9 +26,9 @@ INSERT INTO Produto (Id_Cat_Produto) VALUES (1)
 
 INSERT INTO Produto (Id_Cat_Produto) VALUES (1)
 
-INSERT INTO Receita(Nome) VALUES ('Limão')
+INSERT INTO Receita(Nome_Receita) VALUES ('Limão')
 
-INSERT INTO Receita(Nome) VALUES ('Casca De Laranja')
+INSERT INTO Receita(Nome_Receita) VALUES ('Casca De Laranja')
 
 INSERT INTO Produto_Receita(Id_Produto, Id_Receita) VALUES (1, 2)
 

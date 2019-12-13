@@ -41,7 +41,7 @@ namespace backend.Controllers {
         /// <param name="id"></param>
         /// <returns>Mostramos unico ID de oferta</returns>
         [HttpGet ("{id}")]
-        [Authorize (Roles = "3")]
+        //[Authorize (Roles = "3")]
         public async Task<ActionResult<Oferta>> Get (int id) {
             var oferta = await _repositorio.BuscarPorID (id);
 
@@ -93,8 +93,8 @@ namespace backend.Controllers {
         /// <param name="oferta"></param>
         /// <returns>Alteração de dados de uma oferta</returns>
         [HttpPut ("{id}")]
-        [Authorize (Roles = "3")]
-        [Authorize (Roles = "2")]
+        //[Authorize (Roles = "3")]
+        //[Authorize (Roles = "2")]
         public async Task<ActionResult> Put (int id, Oferta oferta) {
             if (id != oferta.IdOferta) {
 

@@ -37,7 +37,7 @@ namespace backend.Controllers {
         /// <param name="id"></param>
         /// <returns>Pegamos um unico ID de produto</returns>
         [HttpGet ("{id}")]
-        [Authorize(Roles = "3")]
+        //[Authorize(Roles = "3")]
         public async Task<ActionResult<Produto>> Get(int id){
             var produto = await _repositorio.BuscarPorID(id);
 
@@ -53,8 +53,8 @@ namespace backend.Controllers {
         /// <param name="produto"></param>
         /// <returns>Envia dados de produto</returns>
         [HttpPost]
-        [Authorize(Roles = "3")]
-        [Authorize(Roles = "2")]
+        //[Authorize(Roles = "3")]
+        //[Authorize(Roles = "2")]
         public async Task<ActionResult<Produto>> Post (Produto produto){
             try{
                 await _repositorio.Salvar(produto);
@@ -73,8 +73,8 @@ namespace backend.Controllers {
         /// <param name="produto"></param>
         /// <returns>Alteração de produto</returns>
         [HttpPut ("{id}")]
-        [Authorize(Roles = "3")]
-        [Authorize(Roles = "2")]
+        //[Authorize(Roles = "3")]
+        //[Authorize(Roles = "2")]
         public async Task<ActionResult> Put (int id, Produto produto){
             if(id != produto.IdProduto){
                 
@@ -101,8 +101,8 @@ namespace backend.Controllers {
          /// <param name="id"></param>
          /// <returns>Exclui produto</returns>
         [HttpDelete("{id}")]
-        [Authorize(Roles = "3")]
-        [Authorize(Roles = "2")]
+        //[Authorize(Roles = "3")]
+        //[Authorize(Roles = "2")]
         public async Task<ActionResult<Produto>> Delete(int id){
 
             var produto = await _repositorio.BuscarPorID(id);

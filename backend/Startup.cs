@@ -57,6 +57,11 @@ namespace backend {
                 options.AddPolicy (PermissaoEntreOrigens,
                     builder => builder.AllowAnyOrigin ().AllowAnyMethod ().AllowAnyHeader ());
             });
+
+              services.AddCors (options => {
+                options.AddPolicy (PermissaoEntreOrigens,
+                    builder => builder.AllowAnyOrigin ().AllowAnyMethod ().AllowAnyHeader ());
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -72,6 +77,12 @@ namespace backend {
             if (env.IsDevelopment ()) {
                 app.UseDeveloperExceptionPage ();
             }
+
+            app.UseStaticFiles (new StaticFileOptions {
+                FileProvider = new PhysicalFileProvider (
+                        Path.Combine (Directory.GetCurrentDirectory (), "ResourceImage")),
+                    RequestPath = "/ResourceImage"
+            });
 
             // Usamos efetivamente o SWAGGER
             app.UseSwagger ();

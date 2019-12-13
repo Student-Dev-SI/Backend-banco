@@ -11,6 +11,7 @@ Tipo VARCHAR(255)
 );
 
 
+
 CREATE TABLE Cat_Produto(
 Id_Cat_Produto INT IDENTITY PRIMARY KEY NOT NULL,
 Tipo VARCHAR(255) UNIQUE,
@@ -23,7 +24,7 @@ Id_Cat_Produto INT FOREIGN KEY REFERENCES Cat_Produto(Id_Cat_Produto),
 
 CREATE TABLE Receita(
 Id_Receita INT IDENTITY PRIMARY KEY NOT NULL,
-Nome VARCHAR(255)
+Nome_Receita VARCHAR(255)
 );
 
 
