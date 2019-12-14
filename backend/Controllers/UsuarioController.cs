@@ -71,14 +71,14 @@ namespace backend.Controllers {
 
 
                     // Remoção de caracteres especifico
-                 usuario.CpfCnpj =  usuario.CpfCnpj.Replace ("", "");
+                //  usuario.CpfCnpj =  usuario.CpfCnpj.Replace ("", "");
                  usuario.CpfCnpj =  usuario.CpfCnpj.Replace ("/", "");
                  usuario.CpfCnpj =  usuario.CpfCnpj.Replace ("-", "");
                  usuario.CpfCnpj =  usuario.CpfCnpj.Replace (".", "");
 
                 usuario.Email = Request.Form["Email"];
                 usuario.Senha = Request.Form["Senha"];
-                usuario.CelularTelefone = Request.Form["Celular"];
+                usuario.CelularTelefone = Request.Form["CelularTelefone"];
 
                 await _Repositorio.Salvar (usuario);
 
@@ -139,7 +139,7 @@ namespace backend.Controllers {
                 usuario.CpfCnpj = Request.Form["CpfCnpj"];
                 usuario.Email = Request.Form["Email"];
                 usuario.Senha = Request.Form["Senha"];
-                usuario.CelularTelefone = Request.Form["Celular"];
+                usuario.CelularTelefone = Request.Form["CelularTelefone"];
                 usuario.FotoUrlUsuario = _Upload.Upload (arquivo, "Usuarios");
                 await _Repositorio.Alterar (usuario);
             } catch (DbUpdateConcurrencyException) {

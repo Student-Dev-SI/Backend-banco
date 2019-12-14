@@ -20,7 +20,7 @@ namespace backend.Domains
         public string NomeEndereco { get; set; }
         public int Numero { get; set; }
         [Required]
-        [StringLength(1)]
+        [StringLength(255)]
         public string Complemento { get; set; }
         [Required]
         [Column("CEP")]

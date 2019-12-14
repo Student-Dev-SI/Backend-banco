@@ -10,7 +10,6 @@ namespace backend.Domains
     {
         public CatProduto()
         {
-            Oferta = new HashSet<Oferta>();
             Produto = new HashSet<Produto>();
         }
 
@@ -20,8 +19,6 @@ namespace backend.Domains
         [StringLength(255)]
         public string Tipo { get; set; }
 
-        [InverseProperty("IdCatProdutoNavigation")]
-        public virtual ICollection<Oferta> Oferta { get; set; }
         [InverseProperty("IdCatProdutoNavigation")]
         public virtual ICollection<Produto> Produto { get; set; }
     }

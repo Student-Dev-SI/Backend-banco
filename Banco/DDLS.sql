@@ -14,10 +14,10 @@ CREATE TABLE Endereco(
 Id_Endereco INT IDENTITY PRIMARY KEY NOT NULL,
 NomeEndereco VARCHAR(255) NOT NULL,
 Numero INT NOT NULL,
-Complemento VARCHAR NOT NULL,
+Complemento VARCHAR(255) NOT NULL,
 CEP VARCHAR(9) NOT NULL,
 Bairro VARCHAR(255) NOT NULL,
-Estado CHAR(2) NOT NULL,
+Estado CHAR(2) NOT NULL
 );
 
 CREATE TABLE Cat_Produto(
@@ -27,10 +27,8 @@ Tipo VARCHAR(255) UNIQUE,
 
 CREATE TABLE Produto(
 Id_Produto INT IDENTITY PRIMARY KEY NOT NULL,
-Nome_Produto VARCHAR(255),
-Id_Cat_Produto INT FOREIGN KEY REFERENCES Cat_Produto(Id_Cat_Produto)
+Id_Cat_Produto INT FOREIGN KEY REFERENCES Cat_Produto(Id_Cat_Produto),
 );
-
 
 CREATE TABLE Receita(
 Id_Receita INT IDENTITY PRIMARY KEY NOT NULL,
@@ -57,7 +55,6 @@ Celular_Telefone VARCHAR (255) NOT NULL,
 Foto_Url_Usuario TEXT
 );
 
-
 CREATE TABLE Pedido(
 Id_Pedido INT IDENTITY PRIMARY KEY NOT NULL,
 Id_Produto     INT FOREIGN KEY REFERENCES Produto(Id_Produto),
@@ -68,17 +65,15 @@ Quantidade INT NOT NULL
 
 CREATE TABLE Oferta(
 Id_Oferta INT IDENTITY PRIMARY KEY NOT NULL,
-Nome_Produto VARCHAR (255) NOT NULL,
-Descricao_do_Produto VARCHAR (255) NOT NULL,
-Quantidade VARCHAR (255) NOT NULL,
-Preco MONEY NOT NULL,
-Validade DATETIME NOT NULL,
-Foto_Url_Oferta TEXT NOT NULL,
 Id_Produto     INT FOREIGN KEY REFERENCES Produto(Id_Produto),
 Id_Usuario     INT FOREIGN KEY REFERENCES Usuario(Id_Usuario),
-Id_Cat_Produto INT FOREIGN KEY REFERENCES Cat_Produto(Id_Cat_Produto)
+NomeProduto VARCHAR (255) NOT NULL,
+Quantidade VARCHAR (255) NOT NULL,
+Preco MONEY NOT NULL,
+Descricao_do_Produto VARCHAR (255) NOT NULL,
+Validade DATETIME NOT NULL,
+Foto_Url_Oferta TEXT NOT NULL
 );
-
 
 
 

@@ -62,18 +62,20 @@ namespace backend.Controllers {
         public async Task<ActionResult<Oferta>> Post ([FromForm] Oferta oferta) {
             try {
                 if (oferta.Validade > DateTime.Now.AddDays (10)) {
-                //Cadastro de oferta com imagem
-                var arquivo = Request.Form.Files[0];
-                oferta.IdProduto = Convert.ToInt32 (Request.Form["IdProduto"]);
-                oferta.IdUsuario = Convert.ToInt32 (Request.Form["IdUsuario"]);
-                oferta.IdCatProduto = Convert.ToInt32 (Request.Form["IdCatProduto"]);
+                    //Cadastro de oferta com imagem
+                    var arquivo = Request.Form.Files[0];
 
-                oferta.Quantidade = (Request.Form["Quantidade"]);
-                oferta.Preco = decimal.Parse  (Request.Form["Preco"]);
-                oferta.Validade = DateTime.Parse (Request.Form["Validade"]);
-                oferta.FotoUrlOferta = _Upload.Upload (arquivo, "ResourceImage");                 
+                    oferta.IdOferta = Convert.ToInt32 (Request.Form["IdOferta"]);
+                    oferta.IdProduto = Convert.ToInt32 (Request.Form["IdProduto"]);
+                    oferta.IdUsuario = Convert.ToInt32 (Request.Form["IdUsuario"]);
+                    oferta.Quantidade = (Request.Form["Quantidade"]);
+                    oferta.NomeProduto = Request.Form["NomeProduto"];
+                    oferta.Preco = decimal.Parse (Request.Form["Preco"]);
+                    oferta.DescricaoDoProduto = Request.Form["DescricaoDoProduto"];
+                    oferta.Validade = DateTime.Parse (Request.Form["Validade"]);
+                    oferta.FotoUrlOferta = _Upload.Upload (arquivo, "Ofertas");
 
-               await _repositorio.Salvar (oferta);
+                    await _repositorio.Salvar (oferta);
                 } else {
                     return BadRequest (new { mensagem = "Produto fora da validade exigida" });
                 }
@@ -82,7 +84,7 @@ namespace backend.Controllers {
             }
             return oferta;
         }
-    
+
         //Put: Api/Oferta
         /// <summary>
         /// Alteramos os dados de uma oferta
@@ -98,18 +100,20 @@ namespace backend.Controllers {
 
                 return BadRequest ();
             }
+
             _contexto.Entry (oferta).State = EntityState.Modified;
             try {
-              var arquivo = Request.Form.Files[0];
-              
+                var arquivo = Request.Form.Files[0];
+
+                oferta.IdOferta = Convert.ToInt32 (Request.Form["IdOferta"]);
                 oferta.IdProduto = Convert.ToInt32 (Request.Form["IdProduto"]);
                 oferta.IdUsuario = Convert.ToInt32 (Request.Form["IdUsuario"]);
-                oferta.IdCatProduto = Convert.ToInt32 (Request.Form["IdCatProduto"]);
-
                 oferta.Quantidade = (Request.Form["Quantidade"]);
-                oferta.Preco = decimal.Parse  (Request.Form["Preco"]);
+                oferta.NomeProduto = Request.Form["NomeProduto"];
+                oferta.Preco = decimal.Parse (Request.Form["Preco"]);
+                oferta.DescricaoDoProduto = Request.Form["DescricaoDoProduto"];
                 oferta.Validade = DateTime.Parse (Request.Form["Validade"]);
-                oferta.FotoUrlOferta = _Upload.Upload (arquivo, "Ofertas");    
+                oferta.FotoUrlOferta = _Upload.Upload (arquivo, "Ofertas");
 
                 await _repositorio.Alterar (oferta);
             } catch (DbUpdateConcurrencyException) {
@@ -130,8 +134,8 @@ namespace backend.Controllers {
         /// <param name="id"></param>
         /// <returns>Excluir uma oferta</returns>
         [HttpDelete ("{id}")]
-      //  [Authorize (Roles = "3")]
-       // [Authorize (Roles = "2")]
+        //  [Authorize (Roles = "3")]
+        // [Authorize (Roles = "2")]
         public async Task<ActionResult<Oferta>> Delete (int id) {
 
             var oferta = await _contexto.Oferta.FindAsync (id);

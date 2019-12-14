@@ -1,6 +1,7 @@
 /*DQL*/
 
 USE	fastrade
+
 SELECT * FROM Tipo_Usuario
 
 SELECT * FROM Endereco
