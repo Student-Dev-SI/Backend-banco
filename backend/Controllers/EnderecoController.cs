@@ -23,7 +23,7 @@ namespace backend_fastread.Controllers {
         /// </summary>
         /// <returns>Lista de endeço</returns>
         [HttpGet]
-        [Authorize (Roles = "3")]
+       // [Authorize (Roles = "3")]
         public async Task<ActionResult<List<Endereco>>> Get () {
 
             var Enderecos = await _repositorio.Listar ();
@@ -42,7 +42,7 @@ namespace backend_fastread.Controllers {
         /// <param name="id"></param>
         /// <returns>Pegamos apenas um endereço</returns>
         [HttpGet ("{id}")]
-        [Authorize (Roles = "3")]
+     //   [Authorize (Roles = "3")]
         public async Task<ActionResult<Endereco>> Get (int id) {
 
             var Endereco = await _repositorio.BuscarPorID (id);
@@ -60,7 +60,7 @@ namespace backend_fastread.Controllers {
         /// <param name="endereco"></param>
         /// <returns>Enviamos os dados do endereço</returns>
         [HttpPost]
-        [Authorize]
+        //[Authorize]
         public async Task<ActionResult<Endereco>> Post (Endereco endereco) {
 
             try {
@@ -77,7 +77,7 @@ namespace backend_fastread.Controllers {
         /// <param name="endereco"></param>
         /// <returns>Alteramos os dados do endereço</returns>
         [HttpPut ("{id}")]
-        [Authorize]
+      //  [Authorize]
         public async Task<ActionResult> Put (int id, Endereco endereco) {
 
             //Se o id do objeto não existir
@@ -114,7 +114,7 @@ namespace backend_fastread.Controllers {
         /// <param name="id"></param>
         /// <returns>Deletamos os dados do endereço</returns>
         [HttpDelete ("{id}")]
-        [Authorize (Roles = "3")]
+       // [Authorize (Roles = "3")]
         public async Task<ActionResult<Endereco>> Delete (int id) {
 
             var endereco = await _repositorio.BuscarPorID(id);

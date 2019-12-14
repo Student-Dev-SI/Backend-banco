@@ -71,7 +71,7 @@ namespace backend.Controllers {
                 oferta.Quantidade = (Request.Form["Quantidade"]);
                 oferta.Preco = decimal.Parse  (Request.Form["Preco"]);
                 oferta.Validade = DateTime.Parse (Request.Form["Validade"]);
-                oferta.FotoUrlOferta = _Upload.Upload (arquivo, "Ofertas");                 
+                oferta.FotoUrlOferta = _Upload.Upload (arquivo, "ResourceImage");                 
 
                await _repositorio.Salvar (oferta);
                 } else {

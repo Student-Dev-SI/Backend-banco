@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\josel\\OneDrive\\Área de Trabalho\\Backend-banco\\backend\\backend.csproj": {}
+    "c:\\Users\\josel\\OneDrive\\Área de Trabalho\\Backend-banco\\backend\\backend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\josel\\OneDrive\\Área de Trabalho\\Backend-banco\\backend\\backend.csproj": {
+    "c:\\Users\\josel\\OneDrive\\Área de Trabalho\\Backend-banco\\backend\\backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\josel\\OneDrive\\Área de Trabalho\\Backend-banco\\backend\\backend.csproj",
+        "projectUniqueName": "c:\\Users\\josel\\OneDrive\\Área de Trabalho\\Backend-banco\\backend\\backend.csproj",
         "projectName": "backend",
-        "projectPath": "C:\\Users\\josel\\OneDrive\\Área de Trabalho\\Backend-banco\\backend\\backend.csproj",
+        "projectPath": "c:\\Users\\josel\\OneDrive\\Área de Trabalho\\Backend-banco\\backend\\backend.csproj",
         "packagesPath": "C:\\Users\\josel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\josel\\OneDrive\\Área de Trabalho\\Backend-banco\\backend\\obj\\",
+        "outputPath": "c:\\Users\\josel\\OneDrive\\Área de Trabalho\\Backend-banco\\backend\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\josel\\AppData\\Roaming\\NuGet\\NuGet.Config"

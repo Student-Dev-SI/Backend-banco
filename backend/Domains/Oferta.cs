@@ -25,7 +25,7 @@ namespace backend.Domains
         public decimal Preco { get; set; }
         [Column(TypeName = "datetime")]
         public DateTime Validade { get; set; }
-        [Required]
+        // [Required]
         [Column("Foto_Url_Oferta", TypeName = "text")]
         public string FotoUrlOferta { get; set; }
         [Column("Id_Produto")]
