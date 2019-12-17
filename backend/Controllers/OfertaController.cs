@@ -66,7 +66,7 @@ namespace backend.Controllers {
                     var arquivo = Request.Form.Files[0];
 
                     oferta.IdOferta = Convert.ToInt32 (Request.Form["IdOferta"]);
-                    oferta.IdProduto = Convert.ToInt32 (Request.Form["IdProduto"]);
+                    oferta.IdProduto = int.Parse(Request.Form["IdProduto"]);
                     oferta.IdUsuario = Convert.ToInt32 (Request.Form["IdUsuario"]);
                     oferta.Quantidade = (Request.Form["Quantidade"]);
                     oferta.NomeProduto = Request.Form["NomeProduto"];
@@ -147,6 +147,16 @@ namespace backend.Controllers {
             await _contexto.SaveChangesAsync ();
 
             return oferta;
+        }
+
+        [HttpGet ("filtrarcategoria/{filtro}")]
+        public ActionResult<List<Oferta>> FiltroCategoria (string filtro) {
+            List<Oferta> ofertas = _repositorio.FiltroCategoria (filtro);
+            if (ofertas == null) {
+                return NotFound (
+                    new { Mensagem = "Produto não encontrado", Erro = true });
+            }
+            return ofertas;
         }
     }
 }

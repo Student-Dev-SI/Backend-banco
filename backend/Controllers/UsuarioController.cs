@@ -63,7 +63,7 @@ namespace backend.Controllers {
         [HttpPost]
         // [Authorize (Roles = "3")]
         public async Task<ActionResult<Usuario>> Post ([FromForm] Usuario usuario) {
-            try {
+            try {           
                 usuario.IdTipoUsuario = Convert.ToInt32 (Request.Form["IdTipoUsuario"]);
                 usuario.NomeRazaoSocial = Request.Form["NomeRazaoSocial"];
                 usuario.CpfCnpj = Request.Form["CpfCnpj"];

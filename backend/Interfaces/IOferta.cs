@@ -13,5 +13,7 @@ namespace backend.Interfaces {
         Task<Oferta> Alterar (Oferta oferta);
     
         Task<Oferta> Excluir (Oferta oferta);
+        List<Oferta> FiltroCategoria (string filtro);
+        
     }
 }

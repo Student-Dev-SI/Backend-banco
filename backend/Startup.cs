@@ -97,7 +97,7 @@ namespace backend {
 
             // app.UseAuthentication ();
 
-            app.UseHttpsRedirection ();
+            // app.UseHttpsRedirection ();
 
             app.UseRouting ();
 
