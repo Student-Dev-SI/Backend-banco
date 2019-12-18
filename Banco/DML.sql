@@ -24,7 +24,15 @@ INSERT INTO Cat_Produto(Tipo) VALUES ('Legumes')
 
 INSERT INTO Produto (Id_Cat_Produto) VALUES (1)
 
-INSERT INTO Produto (Id_Cat_Produto) VALUES (1)
+INSERT INTO Produto (Id_Cat_Produto) VALUES (2)
+
+INSERT INTO Produto (Id_Cat_Produto) VALUES (3)
+
+INSERT INTO Produto (Id_Cat_Produto) VALUES (4)
+
+INSERT INTO Produto (Id_Cat_Produto) VALUES (5)
+
+INSERT INTO Produto (Id_Cat_Produto) VALUES (6)
 
 INSERT INTO Receita(Nome_Receita) VALUES ('Limão')
 
