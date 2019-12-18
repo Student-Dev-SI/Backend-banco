@@ -59,7 +59,17 @@ Id_Usuario     INT FOREIGN KEY REFERENCES Usuario(Id_Usuario),
 Quantidade INT NOT NULL
 );
 
-
+CREATE TABLE Oferta(
+Id_Oferta INT IDENTITY PRIMARY KEY NOT NULL,
+Id_Produto     INT FOREIGN KEY REFERENCES Produto(Id_Produto),
+Id_Usuario     INT FOREIGN KEY REFERENCES Usuario(Id_Usuario),
+NomeProduto VARCHAR (255) NOT NULL,
+Quantidade VARCHAR (255) NOT NULL,
+Preco MONEY NOT NULL,
+Descricao_do_Produto VARCHAR (255) NOT NULL,
+Validade DATETIME NOT NULL,
+Foto_Url_Oferta TEXT NOT NULL
+);
 
 
 

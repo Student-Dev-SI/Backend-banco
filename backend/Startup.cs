@@ -19,6 +19,8 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json;
 
+//dotnet ef dbcontext scaffold "Server=LAPTOP-P3KQSPPA;Database=fastrade;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -o Domains -d
+
 namespace backend {
     public class Startup {
         public Startup (IConfiguration configuration) {

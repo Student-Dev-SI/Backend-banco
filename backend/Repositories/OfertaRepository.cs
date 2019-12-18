@@ -34,7 +34,7 @@ namespace backend.Repositories {
 
         public async Task<List<Oferta>> Listar () {
             using (fastradeContext _contexto = new fastradeContext ()) {
-                return await _contexto.Oferta.Include("IdProdutoNavigation").Include("IdUsuarioNavigation").Include("IdCatProdutoNavigation").ToListAsync();
+                return await _contexto.Oferta.Include("IdProdutoNavigation").Include("IdUsuarioNavigation").ToListAsync();
             }
         }
 
